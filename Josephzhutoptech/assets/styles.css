@@ -1,0 +1,83 @@
+:root {
+    --bg:       #f5f7fa;
+    --fg:       #2c3e50;
+    --accent:   #18bc9c;
+    --card-bg:  #ffffff;
+    --btn-hover:#149174;
+    --shadow:   0 4px 12px rgba(0,0,0,0.1);
+    --font:     'Inter', sans-serif;
+    --radius:   6px;
+    --padding:  2rem;
+  }
+  [data-theme="dark"] {
+    --bg:        #2c2f33;
+    --fg:        #ffffff;
+    --accent:    #7289da;
+    --card-bg:   #23272a;
+    --btn-hover: #5b6eae;
+    --shadow:    0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--fg);
+    padding: var(--padding);
+    text-align: center;
+  }
+  .hidden { display: none; }
+  .page { max-width: 600px; margin: 0 auto; }
+  .btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    margin: 0.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--btn-hover); }
+  .btn.alt { background: transparent; color: var(--fg); }
+  .small { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+  .nav { margin-top: 1rem; }
+  
+  ul { list-style: none; margin-top: 1rem; padding: 0; }
+  ul li {
+    background: var(--card-bg);
+    margin: 0.5rem auto;
+    padding: 1rem;
+    max-width: 500px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .modal {
+    position: fixed; top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius);
+    width: 320px;
+    box-shadow: var(--shadow);
+    text-align: left;
+  }
+  .modal label { display: block; margin-bottom: 1rem; }
+  .modal input, .modal textarea {
+    width: 100%; padding: 0.4rem; margin-top: 0.2rem;
+  }
+  
+  #themeToggle {
+    position: fixed; top:1rem; right:1rem; z-index:100;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity:0; transform: translateY(10px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  
